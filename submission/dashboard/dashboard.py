@@ -18,8 +18,8 @@ def make_df(data, date_parameter):
     main_df = data[(data[date_parameter] >= str(start_date)) & (data[date_parameter] <= str(end_date))]
     return main_df
 
-day_data = pd.read_csv('D:/tes_nc/Dicoding/AnalisisDataPython/submission/dashboard/bike_day_data.csv')
-hour_data = pd.read_csv('D:/tes_nc/Dicoding/AnalisisDataPython/submission/dashboard/bike_hour_data.csv')
+day_data = pd.read_csv('submission/dashboard/bike_day_data.csv')
+hour_data = pd.read_csv('submission/dashboard/bike_hour_data.csv')
 
 datetime_columns = ["dteday"]
 day_data.sort_values(by="dteday", inplace=True)
@@ -36,7 +36,7 @@ min_date = hour_data["dteday"].min()
 max_date = hour_data["dteday"].max()
 
 with st.sidebar:
-    st.image("D:/tes_nc/Dicoding/AnalisisDataPython/submission/dashboard/Logo.png")
+    st.image("submission/dashboard/Logo.png")
     
     start_date, end_date = st.date_input(
         label='Rentang Waktu',min_value=min_date,
